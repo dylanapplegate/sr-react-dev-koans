@@ -19,7 +19,7 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** SETUP-000
 
-  - **Status:** [ ] Pending
+  - **Status:** [x]
   - **Description:** Implement the Docker environment for the `ninja-koans` project. This includes creating the `Dockerfile` for the development environment and `docker-compose.yml` to orchestrate the `web` and `cli` services.
   - **Requirements:**
     - `Dockerfile` should build a `node:20-alpine` based image, copy `package.json`, run `npm install`, and copy the rest of the app code. It should prevent host `node_modules` from overriding.
@@ -33,14 +33,14 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** SETUP-001
 
-  - **Status:** [ ] Pending
+  - **Status:** [x] Pending
   - **Description:** Initialize the React project using Vite with a TypeScript template _inside_ the Docker environment. Configure Tailwind CSS for styling. Install and configure Jest and React Testing Library. Set up the initial core project folder structure (`src/koans/`, `src/components/`, `src/utils/`, `src/styles/`, `src/assets/`).
   - **Output:** A working React + TypeScript + Tailwind project template configured within the `/app` directory inside the Docker containers.
   - **Dependencies:** SETUP-000.
 
 - **Task ID:** DESIGN-001
 
-  - **Status:** [ ] Pending
+  - **Status:** [x]
   - **Description:** Define a foundational basic styling pattern and a minimalist design token system for `ninja-koans`. This should directly inform and build upon the provided screenshot aesthetic (dark theme, clean typography, structured layouts).
   - **Requirements:** Specify the core color palette (primary dark, accent colors, neutral text colors), typography scale (font families, font sizes for headings/body), and key spacing units. These should be defined as Tailwind CSS theme extensions.
   - **Files to Generate/Modify:** `tailwind.config.js` (for theme extensions), and optionally a `docs/STYLE_GUIDE.md` for human readability and examples.
@@ -49,7 +49,7 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** SETUP-002
 
-  - **Status:** [ ] Pending
+  - **Status:** [x]
   - **Description:** Implement the core CLI (Command Line Interface) runner for `ninja-koans`. This involves creating an `npm` script that, when executed (e.g., `npm run koan <KOAN_ID>`), will:
     1.  Parse the `KOAN_ID` argument.
     2.  Locate and display the content of the corresponding `KOAN.md` file in the terminal.
@@ -60,7 +60,7 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** SETUP-003
 
-  - **Status:** [ ] Pending
+  - **Status:** [x]
   - **Description:** Configure ESLint with **Airbnb's TypeScript rules** and integrate Prettier for consistent code formatting. Ensure ESLint rules that conflict with Prettier are disabled (`eslint-config-prettier`). The setup should enable linting and formatting of `.ts`, `.tsx`, `.js`, and `.jsx` files. Add corresponding `npm` scripts for `lint` and `format`.
   - **Output:** `.eslintrc.js`, `.prettierrc.js`, and `package.json` scripts configured for linting and formatting.
   - **Dependencies:** SETUP-001.
