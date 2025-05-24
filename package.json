@@ -1,0 +1,13 @@
+{
+  "name": "ninja-koans",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node dev.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
