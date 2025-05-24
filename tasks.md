@@ -38,6 +38,15 @@ This phase focuses on establishing the project's technical foundation and introd
   - **Output:** A working React + TypeScript + Tailwind project template configured within the `/app` directory inside the Docker containers.
   - **Dependencies:** SETUP-000.
 
+- **Task ID:** DESIGN-001
+
+  - **Status:** [ ] Pending
+  - **Description:** Define a foundational basic styling pattern and a minimalist design token system for `ninja-koans`. This should directly inform and build upon the provided screenshot aesthetic (dark theme, clean typography, structured layouts).
+  - **Requirements:** Specify the core color palette (primary dark, accent colors, neutral text colors), typography scale (font families, font sizes for headings/body), and key spacing units. These should be defined as Tailwind CSS theme extensions.
+  - **Files to Generate/Modify:** `tailwind.config.js` (for theme extensions), and optionally a `docs/STYLE_GUIDE.md` for human readability and examples.
+  - **Output:** A well-defined, minimalist styling foundation integrated into the Tailwind configuration.
+  - **Dependencies:** SETUP-001.
+
 - **Task ID:** SETUP-002
 
   - **Status:** [ ] Pending
@@ -56,19 +65,21 @@ This phase focuses on establishing the project's technical foundation and introd
   - **Output:** `.eslintrc.js`, `.prettierrc.js`, and `package.json` scripts configured for linting and formatting.
   - **Dependencies:** SETUP-001.
 
-- **Task ID:** SETUP-004
+- **Task ID:** DESIGN-002
 
   - **Status:** [ ] Pending
-  - **Description:** Integrate Storybook into the project. Create a basic Storybook story for a generic `Button` component demonstrating primary, secondary, and disabled states, and size variations. This component should live in `src/components/`.
-  - **Output:** Storybook configured and runnable. `src/components/Button.tsx` and its corresponding `src/components/Button.stories.tsx` file.
-  - **Dependencies:** SETUP-001, SETUP-003.
+  - **Description:** Create high-level, minimalist wireframes or conceptual UI mockups for the _future web application_ (`UI-001`'s target). This should visualize the main application layout, how koans are selected and displayed, and where the Professor AI interaction would occur. Focus on structure, information hierarchy, and user flow, not detailed visual design.
+  - **Requirements:** Maintain the minimalist, dark-themed aesthetic. Show general layouts for: a main navigation/sidebar, a koan selection area, a dedicated koan content display, and a Professor AI interaction panel (e.g., chat window).
+  - **Files to Generate/Modify:** `docs/UI_MOCKUPS.md` (with textual descriptions of layouts, potentially ASCII art, or links to very simple conceptual diagrams/images stored in `docs/assets/`).
+  - **Output:** Conceptual UI guidance to inform the development of the web application.
+  - **Dependencies:** UI-001 (conceptually, as this task defines its direction).
 
 - **Task ID:** UI-001
 
   - **Status:** [ ] Pending
   - **Description:** Create the main application layout (`src/App.tsx`). This layout should display a sidebar (or navigation area) to list available koans and a main content area to render the currently selected koan or the Professor AI interface. Adhere to the minimalist, dark-themed aesthetic (reference the provided screenshot in `README.md`). Implement a simple routing mechanism (e.g., using React Router DOM, or a simple state-based conditional rendering for koan selection). This task is for the _future web UI_, but its basic structure is laid out now.
   - **Output:** Basic UI scaffold for the Koans web application with navigation and dynamic content area.
-  - **Dependencies:** SETUP-001.
+  - **Dependencies:** SETUP-001, DESIGN-001, DESIGN-002.
 
 - **Task ID:** SETUP-005
   - **Status:** [ ] Pending
@@ -88,12 +99,12 @@ These koans focus on foundational React concepts, starting with the most common 
   - **Requirements:**
     - Use functional components with `useState`.
     - Ensure immutability when updating state.
-    - Apply Tailwind CSS for a minimalist, dark-themed button and counter display.
+    - Apply Tailwind CSS for a minimalist, dark-themed button and counter display, adhering to `DESIGN-001`'s patterns.
     - Ensure basic accessibility (e.g., button labels, semantic elements, keyboard navigability).
     - Implement proper TypeScript types for props and state.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-001_UseStateCounter/index.tsx`, `src/koans/KOAN-REACT-001_UseStateCounter/solution.tsx`, `src/koans/KOAN-REACT-001_UseStateCounter/KOAN.md`, `src/koans/KOAN-REACT-001_UseStateCounter/__tests__/index.test.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002 (for CLI runner to display), SETUP-003 (for linting/formatting).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001.
 
 - **Task ID:** KOAN-REACT-002
 
@@ -104,11 +115,11 @@ These koans focus on foundational React concepts, starting with the most common 
     - Use functional components with `useEffect`.
     - Implement loading, error, and success states.
     - Use TypeScript for data types and state.
-    - Apply Tailwind CSS for UI elements (loading indicator, error message, data display).
+    - Apply Tailwind CSS for UI elements (loading indicator, error message, data display), adhering to `DESIGN-001`'s patterns.
     - Include a cleanup mechanism within `useEffect`.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-002_UseEffectDataFetch/index.tsx`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/solution.tsx`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/KOAN.md`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/__tests__/index.test.tsx`, `src/utils/mockApi.ts`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001 (conceptually relies on `useState`).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001 (conceptually relies on `useState`).
 
 - **Task ID:** KOAN-REACT-003
 
@@ -118,11 +129,11 @@ These koans focus on foundational React concepts, starting with the most common 
   - **Requirements:**
     - Design clear TypeScript interfaces for `Card` component props.
     - Use component composition (`children` prop) effectively.
-    - Apply Tailwind CSS for the `Card`'s styling (padding, shadow, dark background, etc.).
+    - Apply Tailwind CSS for the `Card`'s styling (padding, shadow, dark background, etc.), adhering to `DESIGN-001`'s patterns.
     - Ensure props are passed correctly and types are enforced.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-003_ComponentComposition/index.tsx`, `src/koans/KOAN-REACT-003_ComponentComposition/solution.tsx`, `src/koans/KOAN-REACT-003_ComponentComposition/KOAN.md`, `src/koans/KOAN-REACT-003_ComponentComposition/__tests__/index.test.tsx`, `src/components/Card.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001 (conceptually).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001 (conceptually).
 
 - **Task ID:** KOAN-REACT-004
   - **Status:** [ ] Pending
@@ -136,8 +147,8 @@ These koans focus on foundational React concepts, starting with the most common 
     - Demonstrate various conditional rendering techniques (ternary, `&&`, early return).
     - Properly use `map` with unique `key` props for list rendering.
     - Integrate a search input with state.
-    - Apply Tailwind CSS for list styling and input elements.
+    - Apply Tailwind CSS for list styling and input elements, adhering to `DESIGN-001`'s patterns.
     - Implement TypeScript types for list items.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-004_ConditionalListRendering/index.tsx`, `src/koans/KOAN-REACT-004_ConditionalListRendering/solution.tsx`, `src/koans/KOAN-REACT-004_ConditionalListRendering/KOAN.md`, `src/koans/KOAN-REACT-004_ConditionalListRendering/__tests__/index.test.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001, KOAN-REACT-002.
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001, KOAN-REACT-002.
