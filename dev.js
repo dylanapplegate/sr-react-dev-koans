@@ -5,4 +5,4 @@ function getHost() {
 const host = getHost();
 console.log(`Development server would start here (host: ${host})`);
 // Keep the process running
-setInterval(() => {}, 3600000);
+process.stdin.resume();
