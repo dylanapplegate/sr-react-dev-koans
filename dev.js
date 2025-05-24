@@ -1,5 +1,7 @@
 function getHost() {
-    return process.argv.includes('--host') ? process.argv[process.argv.indexOf('--host') + 1] : 'localhost';
+  return process.argv.includes('--host')
+    ? process.argv[process.argv.indexOf('--host') + 1]
+    : 'localhost';
 }
 
 const host = getHost();

@@ -8,4 +8,4 @@ export default {
       '<rootDir>/src/__mocks__/fileMock.js',
   },
   setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
-}
+};

@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="min-h-screen bg-ninja-bg-base text-ninja-text-primary flex flex-col items-center justify-center">
@@ -10,7 +10,7 @@ function App() {
           <span className="text-ninja-accent-primary">忍者</span> Ninja Koans
         </h1>
         <p className="text-xl mb-8">Master React with AI-Guided Koans</p>
-        
+
         <div className="p-6 bg-ninja-bg-raised rounded-lg shadow-lg">
           <p className="text-lg mb-4">
             React + TypeScript + Tailwind CSS Environment Setup Successful!
@@ -24,7 +24,7 @@ function App() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
