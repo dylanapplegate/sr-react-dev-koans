@@ -1,5 +1,6 @@
 {
   "name": "ninja-koans",
+  "description": "A project to practice and master JavaScript concepts through koans.",
   "private": true,
   "version": "0.1.0",
   "type": "module",
