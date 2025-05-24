@@ -1,0 +1,33 @@
+┌───────────────────────────────────────┐
+│ KOAN TITLE                            │
+├───────────────────────────────────────┤
+│                                       │
+│ DESCRIPTION                           │
+│ - Explanation of the koan challenge   │
+│ - Learning objectives                 │
+│ - Hints and additional context        │
+│                                       │
+├───────────────────────────────────────┤
+│                                       │
+│ CODE EDITOR                           │
+│ ┌───────────────────────────────────┐ │
+│ │                                   │ │
+│ │ // Your solution here             │ │
+│ │                                   │ │
+│ │                                   │ │
+│ │                                   │ │
+│ └───────────────────────────────────┘ │
+│                                       │
+├───────────────────────────────────────┤
+│                                       │
+│ TEST RESULTS                          │
+│ ✓ Test 1 passed                       │
+│ ✕ Test 2 failed                       │
+│   Expected: true                      │
+│   Received: false                     │
+│                                       │
+├───────────────────────────────────────┤
+│                                       │
+│ [RUN TESTS] [VIEW SOLUTION] [NEXT]    │
+│                                       │
+└───────────────────────────────────────┘
