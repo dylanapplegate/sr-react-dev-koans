@@ -21,7 +21,7 @@ This document provides a comprehensive outline of the technology stack, tools, a
   - **Prettier (v3.x):** Used for consistent code formatting across the project.
   - **Conflict Resolution:** Prettier rules will take precedence over conflicting ESLint stylistic rules. ESLint will be configured to disable rules that conflict with Prettier (e.g., using `eslint-config-prettier`).
 - **Package Manager:**
-  - **npm (v10.x+):** Preferred package manager for consistency (or pnpm if preferred for performance later).
+  - **npm (v10.x+):** Preferred package manager for consistency.
 - **Version Control:**
   - **Git:** Standard version control system.
   - **GitHub:** Hosting for the repository, leveraging PR workflows.

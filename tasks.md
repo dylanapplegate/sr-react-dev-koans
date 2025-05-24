@@ -38,6 +38,15 @@ This phase focuses on establishing the project's technical foundation and introd
   - **Output:** A working React + TypeScript + Tailwind project template configured within the `/app` directory inside the Docker containers.
   - **Dependencies:** SETUP-000.
 
+- **Task ID:** DESIGN-001
+
+  - **Status:** [ ] Pending
+  - **Description:** Define a foundational basic styling pattern and a minimalist design token system for `ninja-koans`. This should directly inform and build upon the provided screenshot aesthetic (dark theme, clean typography, structured layouts).
+  - **Requirements:** Specify the core color palette (primary dark, accent colors, neutral text colors), typography scale (font families, font sizes for headings/body), and key spacing units. These should be defined as Tailwind CSS theme extensions.
+  - **Files to Generate/Modify:** `tailwind.config.js` (for theme extensions), and optionally a `docs/STYLE_GUIDE.md` for human readability and examples.
+  - **Output:** A well-defined, minimalist styling foundation integrated into the Tailwind configuration.
+  - **Dependencies:** SETUP-001.
+
 - **Task ID:** SETUP-002
 
   - **Status:** [ ] Pending
@@ -56,19 +65,21 @@ This phase focuses on establishing the project's technical foundation and introd
   - **Output:** `.eslintrc.js`, `.prettierrc.js`, and `package.json` scripts configured for linting and formatting.
   - **Dependencies:** SETUP-001.
 
-- **Task ID:** SETUP-004
+- **Task ID:** DESIGN-002
 
   - **Status:** [ ] Pending
-  - **Description:** Integrate Storybook into the project. Create a basic Storybook story for a generic `Button` component demonstrating primary, secondary, and disabled states, and size variations. This component should live in `src/components/`.
-  - **Output:** Storybook configured and runnable. `src/components/Button.tsx` and its corresponding `src/components/Button.stories.tsx` file.
-  - **Dependencies:** SETUP-001, SETUP-003.
+  - **Description:** Create high-level, minimalist wireframes or conceptual UI mockups for the _future web application_ (`UI-001`'s target). This should visualize the main application layout, how koans are selected and displayed, and where the Professor AI interaction would occur. Focus on structure, information hierarchy, and user flow, not detailed visual design.
+  - **Requirements:** Maintain the minimalist, dark-themed aesthetic. Show general layouts for: a main navigation/sidebar, a koan selection area, a dedicated koan content display, and a Professor AI interaction panel (e.g., chat window).
+  - **Files to Generate/Modify:** `docs/UI_MOCKUPS.md` (with textual descriptions of layouts, potentially ASCII art, or links to very simple conceptual diagrams/images stored in `docs/assets/`).
+  - **Output:** Conceptual UI guidance to inform the development of the web application.
+  - **Dependencies:** UI-001 (conceptually, as this task defines its direction).
 
 - **Task ID:** UI-001
 
   - **Status:** [ ] Pending
   - **Description:** Create the main application layout (`src/App.tsx`). This layout should display a sidebar (or navigation area) to list available koans and a main content area to render the currently selected koan or the Professor AI interface. Adhere to the minimalist, dark-themed aesthetic (reference the provided screenshot in `README.md`). Implement a simple routing mechanism (e.g., using React Router DOM, or a simple state-based conditional rendering for koan selection). This task is for the _future web UI_, but its basic structure is laid out now.
   - **Output:** Basic UI scaffold for the Koans web application with navigation and dynamic content area.
-  - **Dependencies:** SETUP-001.
+  - **Dependencies:** SETUP-001, DESIGN-001, DESIGN-002.
 
 - **Task ID:** SETUP-005
   - **Status:** [ ] Pending
@@ -88,12 +99,12 @@ These koans focus on foundational React concepts, starting with the most common 
   - **Requirements:**
     - Use functional components with `useState`.
     - Ensure immutability when updating state.
-    - Apply Tailwind CSS for a minimalist, dark-themed button and counter display.
+    - Apply Tailwind CSS for a minimalist, dark-themed button and counter display, adhering to `DESIGN-001`'s patterns.
     - Ensure basic accessibility (e.g., button labels, semantic elements, keyboard navigability).
     - Implement proper TypeScript types for props and state.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-001_UseStateCounter/index.tsx`, `src/koans/KOAN-REACT-001_UseStateCounter/solution.tsx`, `src/koans/KOAN-REACT-001_UseStateCounter/KOAN.md`, `src/koans/KOAN-REACT-001_UseStateCounter/__tests__/index.test.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002 (for CLI runner to display), SETUP-003 (for linting/formatting).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001.
 
 - **Task ID:** KOAN-REACT-002
 
@@ -104,11 +115,11 @@ These koans focus on foundational React concepts, starting with the most common 
     - Use functional components with `useEffect`.
     - Implement loading, error, and success states.
     - Use TypeScript for data types and state.
-    - Apply Tailwind CSS for UI elements (loading indicator, error message, data display).
+    - Apply Tailwind CSS for UI elements (loading indicator, error message, data display), adhering to `DESIGN-001`'s patterns.
     - Include a cleanup mechanism within `useEffect`.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-002_UseEffectDataFetch/index.tsx`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/solution.tsx`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/KOAN.md`, `src/koans/KOAN-REACT-002_UseEffectDataFetch/__tests__/index.test.tsx`, `src/utils/mockApi.ts`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001 (conceptually relies on `useState`).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001 (conceptually relies on `useState`).
 
 - **Task ID:** KOAN-REACT-003
 
@@ -118,11 +129,11 @@ These koans focus on foundational React concepts, starting with the most common 
   - **Requirements:**
     - Design clear TypeScript interfaces for `Card` component props.
     - Use component composition (`children` prop) effectively.
-    - Apply Tailwind CSS for the `Card`'s styling (padding, shadow, dark background, etc.).
+    - Apply Tailwind CSS for the `Card`'s styling (padding, shadow, dark background, etc.), adhering to `DESIGN-001`'s patterns.
     - Ensure props are passed correctly and types are enforced.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-003_ComponentComposition/index.tsx`, `src/koans/KOAN-REACT-003_ComponentComposition/solution.tsx`, `src/koans/KOAN-REACT-003_ComponentComposition/KOAN.md`, `src/koans/KOAN-REACT-003_ComponentComposition/__tests__/index.test.tsx`, `src/components/Card.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001 (conceptually).
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001 (conceptually).
 
 - **Task ID:** KOAN-REACT-004
   - **Status:** [ ] Pending
@@ -136,8 +147,86 @@ These koans focus on foundational React concepts, starting with the most common 
     - Demonstrate various conditional rendering techniques (ternary, `&&`, early return).
     - Properly use `map` with unique `key` props for list rendering.
     - Integrate a search input with state.
-    - Apply Tailwind CSS for list styling and input elements.
+    - Apply Tailwind CSS for list styling and input elements, adhering to `DESIGN-001`'s patterns.
     - Implement TypeScript types for list items.
   - **Files to Generate/Modify:** `src/koans/KOAN-REACT-004_ConditionalListRendering/index.tsx`, `src/koans/KOAN-REACT-004_ConditionalListRendering/solution.tsx`, `src/koans/KOAN-REACT-004_ConditionalListRendering/KOAN.md`, `src/koans/KOAN-REACT-004_ConditionalListRendering/__tests__/index.test.tsx`.
   - **Output:** Fully implemented koan with template, solution, tests, and documentation.
-  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, KOAN-REACT-001, KOAN-REACT-002.
+  - **Dependencies:** SETUP-001, SETUP-002, SETUP-003, DESIGN-001, KOAN-REACT-001, KOAN-REACT-002.
+
+---
+
+### 2. `docs/TECHNOLOGY_PLATFORM.md`
+
+```markdown
+# TECHNOLOGY PLATFORM: ninja-koans
+
+This document provides a comprehensive outline of the technology stack, tools, and architectural patterns employed in the `ninja-koans` project. It serves as a detailed reference for developers and AI agents contributing to the codebase, ensuring consistency and adherence to established standards.
+
+## 1. Core Development
+
+- **Language:**
+  - **TypeScript (v5.x):** All new code should be written in TypeScript for static type checking, improved maintainability, and enhanced developer experience.
+  - **ECMAScript (ESNext):** Utilize modern JavaScript features as appropriate, assuming transpilation by Vite/Babel.
+- **Framework:**
+  - **React (v18.x):** The primary UI library. Emphasis on functional components and Hooks.
+
+## 2. Build & Tooling
+
+- **Bundler/Dev Server:**
+  - **Vite (v5.x):** Selected for its fast cold start, instant hot module replacement (HMR), and optimized production builds.
+- **Linter:**
+  - **ESLint (v8.x/v9.x if available):** Enforces code quality and style.
+  - **Configuration:** **Airbnb's ESLint config** (`eslint-config-airbnb-typescript`) is the base. Rules will be extended and potentially overridden to integrate smoothly with Prettier and specific project needs.
+- **Formatter:**
+  - **Prettier (v3.x):** Used for consistent code formatting across the project.
+  - **Conflict Resolution:** Prettier rules will take precedence over conflicting ESLint stylistic rules. ESLint will be configured to disable rules that conflict with Prettier (e.g., using `eslint-config-prettier`).
+- **Package Manager:**
+  - **npm (v10.x+):** Preferred package manager for consistency.
+- **Version Control:**
+  - **Git:** Standard version control system.
+  - **GitHub:** Hosting for the repository, leveraging PR workflows.
+- **Containerization:**
+  - **Docker (latest stable):** For consistent development environments.
+  - **Docker Compose (v3.x):** Orchestrates multi-service Docker applications (`web` and `cli` services).
+
+## 3. Testing
+
+- **Unit & Integration Testing:**
+  - **Jest (v29.x+):** The test runner and assertion library.
+  - **React Testing Library (v14.x+):** Preferred method for testing React components, focusing on user-centric interactions and behavior rather than internal component implementation details.
+- **Component Storybook:**
+  - **Storybook (v7.x+):** For isolated UI component development, documentation, and visual regression testing.
+
+## 4. AI Integration
+
+- **Professor AI Agent:**
+  - **Google Jules API:** The underlying AI model powering the Professor's contextual explanations, hints, and learning guidance. Specific SDK/API version to be integrated as needed.
+- **Development AI Assistant:**
+  - **GitHub Copilot:** Utilized by developers during the coding process for autocompletion, code generation, and refactoring suggestions, adhering to the project's coding standards.
+
+## 5. Architectural Patterns & Considerations
+
+- **Component Structure:**
+  - **Functional Components & Hooks:** Exclusive use of functional components and React Hooks for state, side effects, and custom logic.
+  - **Component Composition:** Strong emphasis on composing smaller, single-responsibility components to build complex UIs.
+- **State Management:**
+  - **Local State (`useState`):** For component-specific, ephemeral state.
+  - **Context API (`useContext`):** For application-wide or feature-specific state that doesn't require a full-fledged state management library.
+  - _Potential future exploration:_ Lighter alternatives like Zustand or Jotai for more complex global state scenarios.
+- **Data Handling:**
+  - **Immutability:** All state updates and data transformations should adhere to immutability principles to prevent side effects and simplify debugging.
+  - **API Mocking:** Initial phases will use simple in-memory mock functions or potentially `json-server` for data fetching simulations.
+- **Design System Principles:**
+  - Adherence to consistent design principles for UI components (e.g., spacing, typography, color palette).
+  - Components developed should be robust, extensible, and accessible, suitable for a living design system.
+- **User Experience (UX) & Accessibility (A11y):**
+  - **WCAG (Web Content Accessibility Guidelines):** General principles to guide accessibility implementations.
+  - Semantic HTML5, ARIA attributes, keyboard navigation, and focus management are critical considerations for every component.
+  - Responsive and adaptive design (media queries, fluid layouts) to ensure optimal experience across devices.
+- **Performance Optimization:**
+  - **Memoization (`React.memo`, `useCallback`, `useMemo`):** Strategic use to prevent unnecessary re-renders.
+  - **Code Splitting (`React.lazy`, `Suspense`):** For optimizing bundle sizes and initial load times (future consideration).
+- **Code Quality & Maintainability:**
+  - Emphasis on clean, readable, well-structured, and thoroughly tested code.
+  - Proactive refactoring and continuous improvement.
+```

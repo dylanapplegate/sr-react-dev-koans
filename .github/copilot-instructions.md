@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions for React Koans Project
+# GitHub Copilot Instructions for ninja-koans Project
 
 This document provides context and guidelines for GitHub Copilot to ensure generated code aligns with project standards and goals.
 
