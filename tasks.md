@@ -82,7 +82,7 @@ This phase focuses on establishing the project's technical foundation and introd
   - **Dependencies:** SETUP-001, DESIGN-001, DESIGN-002.
 
 - **Task ID:** SETUP-005
-  - **Status:** [ ] Pending
+  - **Status:** [x]
   - **Description:** Create a placeholder UI component for the "Professor AI Agent" (`src/components/ProfessorAI.tsx`). This component should have a simple chat-like interface (input field, display area for messages) and a static welcome message. No actual AI integration needed at this stage, just the visual representation. This component is part of the _future web UI_.
   - **Output:** `src/components/ProfessorAI.tsx` component.
   - **Dependencies:** SETUP-001, UI-001.
