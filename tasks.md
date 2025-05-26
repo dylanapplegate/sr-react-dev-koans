@@ -67,7 +67,7 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** DESIGN-002
 
-  - **Status:** [ ] Pending
+  - **Status:** [x] Pending
   - **Description:** Create high-level, minimalist wireframes or conceptual UI mockups for the _future web application_ (`UI-001`'s target). This should visualize the main application layout, how koans are selected and displayed, and where the Professor AI interaction would occur. Focus on structure, information hierarchy, and user flow, not detailed visual design.
   - **Requirements:** Maintain the minimalist, dark-themed aesthetic. Show general layouts for: a main navigation/sidebar, a koan selection area, a dedicated koan content display, and a Professor AI interaction panel (e.g., chat window).
   - **Files to Generate/Modify:** `docs/UI_MOCKUPS.md` (with textual descriptions of layouts, potentially ASCII art, or links to very simple conceptual diagrams/images stored in `docs/assets/`).
