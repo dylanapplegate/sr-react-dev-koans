@@ -76,7 +76,7 @@ This phase focuses on establishing the project's technical foundation and introd
 
 - **Task ID:** UI-001
 
-  - **Status:** [ ] Pending
+  - **Status:** [x] Pending
   - **Description:** Create the main application layout (`src/App.tsx`). This layout should display a sidebar (or navigation area) to list available koans and a main content area to render the currently selected koan or the Professor AI interface. Adhere to the minimalist, dark-themed aesthetic (reference the provided screenshot in `README.md`). Implement a simple routing mechanism (e.g., using React Router DOM, or a simple state-based conditional rendering for koan selection). This task is for the _future web UI_, but its basic structure is laid out now.
   - **Output:** Basic UI scaffold for the Koans web application with navigation and dynamic content area.
   - **Dependencies:** SETUP-001, DESIGN-001, DESIGN-002.
