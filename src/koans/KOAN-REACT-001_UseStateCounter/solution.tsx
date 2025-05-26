@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
 
 /**
- * Official solution for KOAN-REACT-001: useState Counter
- * Demonstrates best practices for state, accessibility, and Tailwind CSS.
+ * KOAN-REACT-001: Counter Solution
+ *
+ * Demonstrates useState, immutability, accessibility, and Tailwind CSS.
  */
-const UseStateCounterSolution: React.FC = () => {
+const Counter: React.FC = () => {
   const [count, setCount] = useState<number>(0);
+
+  const handleIncrement = () => setCount(prev => prev + 1);
+  const handleDecrement = () => setCount(prev => prev - 1);
+  const handleReset = () => setCount(0);
 
   return (
     <section
       aria-label="Counter component"
-      className="flex flex-col items-center gap-6 p-6 bg-gray-800 rounded-lg shadow max-w-xs mx-auto"
+      className="flex flex-col items-center max-w-xs gap-6 p-6 mx-auto bg-gray-800 rounded-lg shadow"
     >
-      <h3 className="text-lg font-semibold text-accent-400 mb-2">Counter</h3>
+      <h3 className="mb-2 text-lg font-semibold text-accent-400">Counter</h3>
       <div className="flex items-center gap-4">
         <button
           type="button"
           aria-label="Decrement"
-          onClick={() => setCount(prev => prev - 1)}
-          className="px-4 py-2 rounded bg-gray-700 text-accent-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-400"
+          onClick={handleDecrement}
+          className="px-4 py-2 bg-gray-700 rounded text-accent-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-400"
         >
           -
         </button>
@@ -31,8 +36,8 @@ const UseStateCounterSolution: React.FC = () => {
         <button
           type="button"
           aria-label="Increment"
-          onClick={() => setCount(prev => prev + 1)}
-          className="px-4 py-2 rounded bg-gray-700 text-accent-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-400"
+          onClick={handleIncrement}
+          className="px-4 py-2 bg-gray-700 rounded text-accent-300 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-accent-400"
         >
           +
         </button>
@@ -40,8 +45,8 @@ const UseStateCounterSolution: React.FC = () => {
       <button
         type="button"
         aria-label="Reset counter"
-        onClick={() => setCount(0)}
-        className="mt-2 px-4 py-2 rounded bg-accent-500 text-white font-semibold hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-400"
+        onClick={handleReset}
+        className="px-4 py-2 mt-2 font-semibold text-white rounded bg-accent-500 hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-accent-400"
       >
         Reset
       </button>
@@ -49,4 +54,4 @@ const UseStateCounterSolution: React.FC = () => {
   );
 };
 
-export default UseStateCounterSolution;
+export default Counter;
