@@ -56,14 +56,14 @@ const App: React.FC = () => {
         </span>
         <div className="flex gap-4">
           <button
+            aria-label="Toggle theme"
             className="text-accent-400 hover:text-accent-300 focus:outline-none"
-            aria-label="Toggle dark mode"
           >
             🌙
           </button>
           <button
+            aria-label="Settings"
             className="text-gray-400 hover:text-gray-200 focus:outline-none"
-            aria-label="User settings"
           >
             ⚙️
           </button>
