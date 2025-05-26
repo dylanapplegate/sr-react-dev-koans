@@ -2,27 +2,50 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Counter from '../index';
 
-describe('Counter Component', () => {
-  test('renders with initial count of 0', () => {
+describe('KOAN-REACT-001: Counter', () => {
+  it('renders the counter and buttons', () => {
     render(<Counter />);
-    expect(screen.getByText(/count: 0/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /decrement/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole('button', { name: /increment/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /reset/i })).toBeInTheDocument();
+    expect(screen.getByText('0')).toBeInTheDocument();
   });
 
-  test('increments count when + button is clicked', () => {
+  it('increments and decrements the counter', () => {
     render(<Counter />);
-    fireEvent.click(screen.getByText('+'));
-    expect(screen.getByText(/count: 1/i)).toBeInTheDocument();
+    const increment = screen.getByRole('button', { name: /increment/i });
+    const decrement = screen.getByRole('button', { name: /decrement/i });
+    const value = () => screen.getByText(/\d+/);
+
+    fireEvent.click(increment);
+    expect(value().textContent).toBe('1');
+    fireEvent.click(increment);
+    expect(value().textContent).toBe('2');
+    fireEvent.click(decrement);
+    expect(value().textContent).toBe('1');
   });
 
-  test('decrements count when - button is clicked', () => {
-    render(<Counter initialCount={5} />);
-    fireEvent.click(screen.getByText('-'));
-    expect(screen.getByText(/count: 4/i)).toBeInTheDocument();
+  it('resets the counter', () => {
+    render(<Counter />);
+    const increment = screen.getByRole('button', { name: /increment/i });
+    const reset = screen.getByRole('button', { name: /reset/i });
+    const value = () => screen.getByText(/\d+/);
+
+    fireEvent.click(increment);
+    fireEvent.click(increment);
+    expect(value().textContent).toBe('2');
+    fireEvent.click(reset);
+    expect(value().textContent).toBe('0');
   });
 
-  test('does not decrement below zero', () => {
+  it('is accessible by keyboard', () => {
     render(<Counter />);
-    fireEvent.click(screen.getByText('-'));
-    expect(screen.getByText(/count: 0/i)).toBeInTheDocument();
+    const increment = screen.getByRole('button', { name: /increment/i });
+    increment.focus();
+    expect(increment).toHaveFocus();
   });
 });

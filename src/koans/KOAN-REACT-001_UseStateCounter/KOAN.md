@@ -1,25 +1,40 @@
-# The Way of useState: Simple Counter
+# KOAN-REACT-001: useState Hook & Basic State Management
 
-> "Before useState, there was nothing. After useState, there is state." - React Zen Master
+## Challenge
 
-## Concept Overview
+Implement a simple counter component using React's `useState` hook. The component should display a number and have three buttons:
 
-In React's functional components, the `useState` Hook provides a way to add state without converting to a class component. This koan challenges you to implement a simple counter using the `useState` Hook.
+- **Increment**: Increases the counter by 1
+- **Decrement**: Decreases the counter by 1
+- **Reset**: Sets the counter back to 0
 
-## Your Task
+### Requirements
 
-Create a Counter component that:
+- Use a functional component and the `useState` hook for state management.
+- Ensure state updates are immutable and use the functional update form.
+- Style the component using Tailwind CSS for a minimalist, dark-themed look.
+- Ensure accessibility: use semantic elements, proper button labels, and keyboard navigability.
+- Use TypeScript for all props and state.
 
-1. Uses the `useState` Hook to track a count value
-2. Displays the current count
-3. Provides buttons to increment and decrement the counter
-4. Ensures the count never goes below zero
+## Example
 
-## Requirements
+The counter should look and behave like this:
 
-- Implement the Counter in the `index.tsx` file
-- Use only functional components and Hooks
-- Style your component using Tailwind CSS classes
-- Make sure all tests pass
+```
++---------+   +-----+   +---------+
+|   -     |   |  0  |   |   +     |
++---------+   +-----+   +---------+
+      [Reset]
+```
 
-May your state be ever immutable, and your renders pure.
+- The number updates as you click + or -
+- The Reset button sets the number to 0
+
+---
+
+**Learning objectives:**
+
+- Understand and use the `useState` hook
+- Practice immutable state updates
+- Apply Tailwind CSS for UI
+- Implement accessible, minimalist React components

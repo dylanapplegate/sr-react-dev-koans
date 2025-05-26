@@ -93,7 +93,7 @@ These koans focus on foundational React concepts, starting with the most common 
 
 - **Task ID:** KOAN-REACT-001
 
-  - **Status:** [ ] Pending
+  - **Status:** [x] Completed
   - **Concept:** **`useState` Hook & Basic State Management**
   - **Description:** Create a koan that challenges the user to implement a simple counter component using the `useState` hook. The component should display a number and have two buttons: one to increment and one to decrement the number. It should also have a button to reset the counter.
   - **Requirements:**
