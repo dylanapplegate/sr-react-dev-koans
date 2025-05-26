@@ -1,0 +1,18 @@
+┌────────────┐
+│ KOANS      │
+│            │
+│ ▼ BASICS   │
+│  ├ Koan 1  │
+│  ├ Koan 2  │
+│  └ Koan 3  │
+│            │
+│ ▼ HOOKS    │
+│  ├ Koan 4  │
+│  ├ Koan 5  │
+│  └ Koan 6  │
+│            │
+│ ▼ ADVANCED │
+│  ├ Koan 7  │
+│  └ Koan 8  │
+│            │
+└────────────┘
