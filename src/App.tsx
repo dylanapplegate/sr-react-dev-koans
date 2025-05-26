@@ -15,12 +15,15 @@ const koans = [
  * Loads and displays the content for a given koan.
  * For now, this is a placeholder. In the future, this could dynamically import the koan component.
  */
-const KoanContent: React.FC<{ koanId: string }> = ({ koanId }) => {
+const KoanContent: React.FC<{ koanId: string; title?: string }> = ({
+  koanId,
+  title,
+}) => {
   // Placeholder: In a real app, dynamically import/render the koan by ID
   return (
     <section className="w-full max-w-xl p-8 bg-gray-900 rounded-lg shadow">
       <h2 className="mb-4 text-xl font-semibold text-accent-400">
-        {koanId.replace('KOAN-REACT-', 'React Koan: ')}
+        {title ?? koanId}
       </h2>
       <p className="text-gray-300">
         This is where the koan content for{' '}
@@ -37,6 +40,9 @@ const App: React.FC = () => {
   );
   // Responsive toggle for Professor AI panel (mobile)
   const [showAI, setShowAI] = useState(false);
+
+  // Find the selected koan object for title
+  const selectedKoanObject = koans.find(k => k.id === selected);
 
   return (
     <div className="flex flex-col min-h-screen font-sans text-gray-100 bg-gray-950">
@@ -106,7 +112,7 @@ const App: React.FC = () => {
           id="main-content"
           tabIndex={-1}
         >
-          <KoanContent koanId={selected} />
+          <KoanContent koanId={selected} title={selectedKoanObject?.title} />
         </main>
         {/* Professor AI Panel (right) */}
         <aside
